@@ -28,4 +28,5 @@ Node* Node::getNext()
 Node::Node(Task task)
 {
     data = task;
+    Node::next = nullptr;
 }
