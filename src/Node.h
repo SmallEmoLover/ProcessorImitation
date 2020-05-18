@@ -22,5 +22,7 @@ class Node
         Task getData();
         //Получение следующего элемента списка
         Node* getNext();
+        //Изменение указателя на следующий элемент
+        void setNext(Node* node);
         Node(Task task);
 };
