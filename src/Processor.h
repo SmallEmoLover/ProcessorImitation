@@ -15,11 +15,11 @@ class Processor
     private:
         Stack *tasks;
         bool isFree;
-        Task currentTask;
-        //При остановке задачи
-        void onStopTask();
+        Task *currentTask;
     public:
         //Добавление новой задачи
-        void newTask(Task task);
+        void newTask(Task *task);
+        //При остановке задачи
+        void onStopTask();
         Processor();
 };

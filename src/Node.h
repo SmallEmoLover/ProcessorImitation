@@ -12,17 +12,17 @@
 class Node
 {
     private:
-        Task data;
+        Task *data;
         Node *next;
         
     public:
         //Вставка в список после prev
-        Node* insert(Task data, Node *prev);
+        Node* insert(Task *data, Node *prev);
         //Получение данных
-        Task getData();
+        Task* getData();
         //Получение следующего элемента списка
         Node* getNext();
         //Изменение указателя на следующий элемент
         void setNext(Node* node);
-        Node(Task task);
+        Node(Task *task);
 };

@@ -18,9 +18,9 @@ class Queue
         
     public:
         //добавление в очередь
-        void queue(Task data);
+        void queue(Task *data);
         //удаление из очереди
-        Task dequeue();
+        Task* dequeue();
         //пуста ли очередь
         bool isEmpty();
         Queue();

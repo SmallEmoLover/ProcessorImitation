@@ -17,9 +17,9 @@ class Stack
 
     public:
         //добавить элемент
-        void push(Task data);
+        void push(Task *data);
         //взять элемент
-        Task pop();
+        Task* pop();
         //пуст ли стек
         bool isEmpty();
         Stack();

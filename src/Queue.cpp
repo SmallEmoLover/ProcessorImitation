@@ -21,7 +21,7 @@ bool Queue::isEmpty()
         return false;
 }
 
-void Queue::queue(Task data)
+void Queue::queue(Task *data)
 {
     if (Queue::isEmpty())
         first = last = new Node(data);
@@ -29,13 +29,9 @@ void Queue::queue(Task data)
         last = last->insert(data, last);
 }
 
-Task Queue::dequeue()
+Task* Queue::dequeue()
 {
-    if (Queue::isEmpty())
-    {
-        //TODO: вывод ошибки
-    }
-    Task result = first->getData();
+    Task* result = first->getData();
     Node* cur = first;
     if (first == last)
         first = last = nullptr;

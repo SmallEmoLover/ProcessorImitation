@@ -7,7 +7,7 @@
     Реализация класса списков
 */
 
-Node* Node::insert(Task data, Node *prev)
+Node* Node::insert(Task *data, Node *prev)
 {
     Node* cur = new Node(data);
     prev->next = cur;
@@ -15,23 +15,23 @@ Node* Node::insert(Task data, Node *prev)
     return cur;
 } 
 
-Task Node::getData()
+Task* Node::getData()
 {
-    return Node::data;
+    return data;
 }
 
 Node* Node::getNext()
 {
-    return Node::next;
+    return next;
 }
 
 void Node::setNext(Node *node)
 {
-    Node::next = next;
+    next = node;
 }
 
-Node::Node(Task task)
+Node::Node(Task *task)
 {
     data = task;
-    Node::next = nullptr;
+    next = nullptr;
 }

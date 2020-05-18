@@ -9,16 +9,17 @@
 
 Processor::Processor()
 {
+    currentTask = nullptr;
     tasks = new Stack();
     isFree = true;
 }
 
-void Processor::newTask(Task task)
+void Processor::newTask(Task *task)
 {
     if(isFree == true)
     {
         currentTask = task;
-        currentTask.execute();
+        currentTask->execute();
         isFree == false;
     }
     else
@@ -32,7 +33,7 @@ void Processor::onStopTask()
     else
     {
         currentTask = tasks->pop();
-        currentTask.execute();
+        currentTask->execute();
     }
 }
 

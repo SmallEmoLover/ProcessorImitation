@@ -12,7 +12,7 @@ Stack::Stack()
     first == nullptr;
 }
 
-void Stack::push(Task data)
+void Stack::push(Task *data)
 {
     if(Stack::isEmpty())
         first = new Node(data);
@@ -24,9 +24,9 @@ void Stack::push(Task data)
     }
 }
 
-Task Stack::pop()
+Task* Stack::pop()
 {
-    Task result = first->getData();
+    Task* result = first->getData();
     Node *cur = first;
     first = cur->getNext();
     delete cur;
