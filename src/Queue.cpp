@@ -1,5 +1,6 @@
 #include "Queue.h"
 #include "Node.h"
+#include <iostream>
 
 /*
     Кулаков Д.С. :с
@@ -39,4 +40,20 @@ Task* Queue::dequeue()
         first = cur->getNext();
     delete cur;
     return result;
+}
+
+void Queue::print()
+{
+    if (isEmpty())
+    {
+        std::cout << "Empty :c\n";
+        return;
+    }
+
+    Node* cur = first;
+    while(cur != nullptr)
+    {
+        std::cout << cur->getData()->getName();
+        cur = cur->getNext();
+    }
 }

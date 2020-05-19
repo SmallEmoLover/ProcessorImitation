@@ -25,6 +25,8 @@ class Queue
         Task* dequeue();
         //пуста ли очередь
         bool isEmpty();
+        //печать
+        void print();
         Queue();
 };
 

@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <iostream>
 
 /*
     Кулаков Д.С. :с
@@ -39,4 +40,20 @@ bool Stack::isEmpty()
         return true;
     else
         return false;
+}
+
+void Stack::print()
+{
+    if (isEmpty())
+    {
+        std::cout << "Empty :c\n";
+        return;
+    }
+
+    Node* cur = first;
+    while(cur != nullptr)
+    {
+        std::cout << cur->getData()->getName();
+        cur = cur->getNext();
+    }
 }
