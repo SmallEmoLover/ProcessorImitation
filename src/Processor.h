@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _PROCESSOR
+#define _PROCESSOR
+
 #include "Stack.h"
 #include "Task.h"
 
@@ -9,6 +12,9 @@
     Лабораторная по имитированию работы процессора
     Класс процессора
 */
+
+class Task;
+class Stack;
 
 class Processor
 {
@@ -23,3 +29,5 @@ class Processor
         void onStopTask();
         Processor();
 };
+
+#endif //!_PROCESSOR

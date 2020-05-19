@@ -9,7 +9,7 @@
 
 Stack::Stack()
 {
-    first == nullptr;
+    first = nullptr;
 }
 
 void Stack::push(Task *data)

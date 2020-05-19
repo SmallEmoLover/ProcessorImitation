@@ -1,7 +1,9 @@
 #pragma once
 
+#ifndef _QUEUE
+#define _QUEUE
+
 #include "Node.h"
-#include "Task.h"
 
 /*
     Кулаков Д.С. :с
@@ -25,3 +27,5 @@ class Queue
         bool isEmpty();
         Queue();
 };
+
+#endif // !_QUEUE

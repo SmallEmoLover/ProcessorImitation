@@ -16,6 +16,7 @@ Task::Task(int time, Processor *processor)
 void Task::execute()
 {
     //Тут вроде как выполнение задачи, но так как мы только моделируем работу процессора, то тут ничего нет
+    processor->newTask(this);
 }
 
 void Task::changeTime(int newTime)

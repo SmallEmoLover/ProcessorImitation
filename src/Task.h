@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _TASK
+#define _TASK
+
 #include "Processor.h"
 
 /*
@@ -11,11 +14,13 @@
 
 //TODO: деконструкторы
 
+class Processor;
+
 class Task
 {
     private:
         int time;
-        Processor *processor;
+		Processor *processor;
 
     public:
         void execute();
@@ -23,3 +28,5 @@ class Task
         void stop();
         Task(int time, Processor *processor);
 };
+
+#endif // !_TASK

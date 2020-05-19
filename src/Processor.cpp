@@ -20,7 +20,7 @@ void Processor::newTask(Task *task)
     {
         currentTask = task;
         currentTask->execute();
-        isFree == false;
+        isFree = false;
     }
     else
         tasks->push(task);    
@@ -29,7 +29,7 @@ void Processor::newTask(Task *task)
 void Processor::onStopTask()
 {
     if (tasks->isEmpty())
-        isFree == true;
+        isFree = true;
     else
     {
         currentTask = tasks->pop();

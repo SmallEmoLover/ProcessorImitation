@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _NODE
+#define _NODE
+
 #include "Task.h"
 
 /*
@@ -8,6 +11,8 @@
     Лабораторная по имитированию работы процессора
     Класс списков
 */
+
+class Task;
 
 class Node
 {
@@ -26,3 +31,5 @@ class Node
         void setNext(Node* node);
         Node(Task *task);
 };
+
+#endif // !_NODE
