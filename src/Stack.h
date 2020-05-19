@@ -27,6 +27,8 @@ class Stack
         Task* pop();
         //пуст ли стек
         bool isEmpty();
+        //вывод
+        void print();
         Stack();
 };
 
