@@ -7,24 +7,23 @@
     Реализация класса задач
 */
 
-Task::Task(int time, Processor *processor)
+Task::Task(int type)
 {
-    Task::time = time;
-    Task::processor = processor;
+    percent = 0;
+    Task::type = type;
 }
 
-void Task::execute()
+void Task::setPercent(int percent)
 {
-    //Тут вроде как выполнение задачи, но так как мы только моделируем работу процессора, то тут ничего нет
-    processor->newTask(this);
+    Task::percent = percent;
 }
 
-void Task::changeTime(int newTime)
+int Task::getType()
 {
-    time = newTime;
+    return type;
 }
 
-void Task::stop()
+int Task::getPercent()
 {
-    processor->onStopTask();
+    return percent;
 }

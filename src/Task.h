@@ -1,10 +1,5 @@
 #pragma once
 
-#ifndef _TASK
-#define _TASK
-
-#include "Processor.h"
-
 /*
     Кулаков Д.С. :с
     ИВТ-13БО
@@ -14,19 +9,18 @@
 
 //TODO: деконструкторы
 
-class Processor;
-
 class Task
 {
     private:
-        int time;
-		Processor *processor;
+        //Процент выполнения
+        int percent;
+        //Тип задачи
+		int type;
 
     public:
-        void execute();
-        void changeTime(int newTime);
-        void stop();
-        Task(int time, Processor *processor);
+        //Установить процент
+        void setPercent(int percent);
+        int getType();
+        int getPercent();
+        Task(int type);
 };
-
-#endif // !_TASK

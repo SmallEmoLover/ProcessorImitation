@@ -19,21 +19,21 @@ void Processor::newTask(Task *task)
     if(isFree == true)
     {
         currentTask = task;
-        currentTask->execute();
         isFree = false;
     }
     else
         tasks->push(task);    
 }
 
-void Processor::onStopTask()
+void Processor::checkTask()
 {
-    if (tasks->isEmpty())
-        isFree = true;
-    else
+    if (currentTask->getPercent() >= 100)
     {
-        currentTask = tasks->pop();
-        currentTask->execute();
+        delete currentTask;
+        if (tasks->isEmpty())
+            isFree = true;
+        else
+            currentTask = tasks->pop();
     }
 }
 

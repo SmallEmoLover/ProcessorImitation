@@ -6,16 +6,23 @@
 #include "Processor.h"
 #include "Queue.h"
 
+/*
+    Кулаков Д.С. :с 
+    ИВТ-13БО
+    Лабораторная по имитированию работы процессора
+    Класс распределителя задач
+*/
+
 class TaskDispencer
 {
 private:
     Processor *processors;
     Queue *tasks;
 public:
-	//�������� ������ � ��������������
+	//Добавить новую задачу в распределитель
     void addTask(Task *task);
-	//��������� ������
-	void executeTask();
+	//Распределить задачу
+	void dispenceTask();
 	TaskDispencer(int num_processors);
 };
 

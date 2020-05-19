@@ -1,5 +1,12 @@
 #include "TaskDispencer.h"
 
+/*
+    Кулаков Д.С. :с
+    ИВТ-13БО
+    Лабораторная по имитированию работы процессора
+    Реализация класса распределителя задач
+*/
+
 TaskDispencer::TaskDispencer(int num_processors)
 {
     tasks = new Queue();
@@ -11,10 +18,11 @@ void TaskDispencer::addTask(Task *task)
 	tasks->queue(task);
 }
 
-void TaskDispencer::executeTask()
+void TaskDispencer::dispenceTask()
 {
 	if (tasks->isEmpty())
 		return;
 	
-	tasks->dequeue()->execute();
+	Task *cur = tasks->dequeue();
+    processors[cur->getType()].newTask(cur);
 }

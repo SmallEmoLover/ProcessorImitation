@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef _PROCESSOR
-#define _PROCESSOR
-
 #include "Stack.h"
 #include "Task.h"
 
@@ -13,9 +10,6 @@
     Класс процессора
 */
 
-class Task;
-class Stack;
-
 class Processor
 {
     private:
@@ -25,9 +19,7 @@ class Processor
     public:
         //Добавление новой задачи
         void newTask(Task *task);
-        //При остановке задачи
-        void onStopTask();
+        //Проверка выполнения задачи
+        void checkTask();
         Processor();
 };
-
-#endif //!_PROCESSOR
