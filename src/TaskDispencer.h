@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef _TASKDISPENCER
-#define _TASKDISPENCER
-
 #include "Processor.h"
 #include "Queue.h"
 
@@ -15,18 +12,23 @@
 
 class TaskDispencer
 {
-private:
-    Processor *processors;
-    Queue *tasks;
-public:
-	//Добавить новую задачу в распределитель
-    void addTask(Task *task);
-	//Распределить задачу
-	void dispenceTask();
-	void printState();
-	void stopTask(int processor);
-	Task *getCurrentTask(int processor);
-	TaskDispencer(int num_processors);
-};
+	private:
+		Processor *processors;
+		Queue *tasks;
+		int num_processors;
 
-#endif // !_TASKDISPENCER
+	public:
+		//Добавить новую задачу в распределитель
+		void addTask(Task *task);
+		//Распределить задачу
+		void dispenceTask();
+        //Печать состояния системы
+		void printState();
+        //Остановить текущую задачу процессора
+		void stopTask(int processor);
+        //Получить текущую задачу процессора
+		Task *getCurrentTask(int processor);
+
+		TaskDispencer(int num_processors);
+		~TaskDispencer();
+};

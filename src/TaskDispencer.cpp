@@ -10,12 +10,24 @@
 
 TaskDispencer::TaskDispencer(int num_processors)
 {
+	TaskDispencer::num_processors = num_processors;
     tasks = new Queue();
     processors = new Processor[num_processors];
 }
 
+TaskDispencer::~TaskDispencer()
+{
+	delete processors;
+	delete tasks;
+}
+
 void TaskDispencer::addTask(Task *task)
 {
+	if (task->getType() < 0 || task->getType() > num_processors)
+	{
+		std::cout << "\nWrong task type\n";
+		return;
+	}
 	tasks->queue(task);
 }
 
@@ -30,7 +42,7 @@ void TaskDispencer::dispenceTask()
 
 void TaskDispencer::printState()
 {
-	std::cout << "\n\nDispencer tasks: ";
+	std::cout << "\n\nDispencer queue: ";
 	tasks->print();
 	for (int i = 0; i < 3; i++)
 	{
@@ -41,11 +53,20 @@ void TaskDispencer::printState()
 
 Task* TaskDispencer::getCurrentTask(int processor)
 {
+	if (processor < 0 || processor > num_processors)
+	{
+		std::cout << "Wrong processor number";
+		return nullptr;
+	}
 	return processors[processor].getCurrentTask();
 }
 
-//TODO: Принимать задачу
 void TaskDispencer::stopTask(int processor)
 {
-	processors[processor].checkTask();
+	if (processor < 0 || processor > num_processors)
+	{
+		std::cout << "Wrong processor number";
+		return;
+	}
+	processors[processor].stopTask();
 }
