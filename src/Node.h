@@ -18,8 +18,8 @@ class Node
         Node *next;
         
     public:
-        //Вставка в список после prev
-        Node* insert(Task *data, Node *prev);
+        //Вставка в список после данного
+        Node* insertAfter(Task *data);
         //Получение данных
         Task* getData();
         //Получение следующего элемента списка
