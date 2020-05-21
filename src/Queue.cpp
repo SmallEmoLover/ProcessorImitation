@@ -14,6 +14,18 @@ Queue::Queue()
     first = last = nullptr;
 }
 
+Queue::~Queue()
+{
+	while (true)
+	{
+		Node* cur = first;
+		if (first == nullptr)
+			return;
+		first = first->getNext();
+		delete cur;
+	}
+}
+
 bool Queue::isEmpty()
 {
     if(first == nullptr)
@@ -24,10 +36,10 @@ bool Queue::isEmpty()
 
 void Queue::queue(Task *data)
 {
-    if (Queue::isEmpty())
+    if (isEmpty())
         first = last = new Node(data);
     else
-        last = last->insert(data, last);
+        last = last->insertAfter(data);
 }
 
 Task* Queue::dequeue()

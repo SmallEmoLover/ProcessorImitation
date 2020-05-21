@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef _QUEUE
-#define _QUEUE
-
 #include "Node.h"
 
 /*
@@ -27,7 +24,7 @@ class Queue
         bool isEmpty();
         //печать
         void print();
-        Queue();
-};
 
-#endif // !_QUEUE
+        Queue();
+		~Queue();
+};
