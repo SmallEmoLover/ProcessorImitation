@@ -7,11 +7,12 @@
     Реализация класса списков
 */
 
+//Возвращает указатель на вставленный элемент
 Node* Node::insert(Task *data, Node *prev)
 {
     Node* cur = new Node(data);
+	cur->next = prev->next;
     prev->next = cur;
-    cur->next = nullptr;
     return cur;
 } 
 
