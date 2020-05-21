@@ -23,6 +23,9 @@ public:
     void addTask(Task *task);
 	//Распределить задачу
 	void dispenceTask();
+	void printState();
+	void stopTask(int processor);
+	Task *getCurrentTask(int processor);
 	TaskDispencer(int num_processors);
 };
 

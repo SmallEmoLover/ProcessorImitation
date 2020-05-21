@@ -21,5 +21,7 @@ class Processor
         void newTask(Task *task);
         //Проверка выполнения задачи
         void checkTask();
+		Task* getCurrentTask();
+		void printState();
         Processor();
 };

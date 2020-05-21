@@ -1,4 +1,5 @@
 #include "Processor.h"
+#include <iostream>
 
 /*
     Кулаков Д.С. :с
@@ -37,3 +38,20 @@ void Processor::checkTask()
     }
 }
 
+Task* Processor::getCurrentTask()
+{
+	return currentTask;
+}
+
+void Processor::printState()
+{
+	if (isFree)
+		std::cout << "Processor is free";
+	else
+	{
+		std::cout << "Current task: " << getCurrentTask()->getName();
+		std::cout << " complete: " << getCurrentTask()->getPercent() << "%";
+		std::cout << "\nStack: ";
+		tasks->print();
+	}
+}

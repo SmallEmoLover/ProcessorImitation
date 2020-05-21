@@ -53,7 +53,7 @@ void Stack::print()
     Node* cur = first;
     while(cur != nullptr)
     {
-        std::cout << cur->getData()->getName();
+        std::cout << cur->getData()->getName() << " ";
         cur = cur->getNext();
     }
 }
