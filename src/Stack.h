@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef _STACK
-#define _STACK
-
 #include "Node.h"
 
 /*
@@ -11,9 +8,6 @@
     Лабораторная по имитированию работы процессора
     Класс стека
 */
-
-class Task;
-class Node;
 
 class Stack
 {
@@ -29,7 +23,7 @@ class Stack
         bool isEmpty();
         //вывод
         void print();
-        Stack();
-};
 
-#endif // !_STACK
+        Stack();
+		~Stack();
+};

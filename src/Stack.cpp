@@ -13,6 +13,18 @@ Stack::Stack()
     first = nullptr;
 }
 
+Stack::~Stack()
+{
+	while (true)
+	{
+		Node* cur = first;
+		if (first == nullptr)
+			return;
+		first = first->getNext();
+		delete cur;
+	}
+}
+
 void Stack::push(Task *data)
 {
     if(Stack::isEmpty())
