@@ -15,6 +15,13 @@ Processor::Processor()
     isFree = true;
 }
 
+Processor::~Processor()
+{
+	delete tasks;
+	if (currentTask != nullptr)
+		delete currentTask;
+}
+
 void Processor::newTask(Task *task)
 {
     if(isFree == true)
@@ -26,16 +33,14 @@ void Processor::newTask(Task *task)
         tasks->push(task);    
 }
 
-void Processor::checkTask()
+void Processor::stopTask()
 {
-    if (currentTask->getPercent() >= 100)
-    {
-        delete currentTask;
-        if (tasks->isEmpty())
-            isFree = true;
-        else
-            currentTask = tasks->pop();
-    }
+	if (currentTask != nullptr)
+		delete currentTask;
+    if (tasks->isEmpty())
+		isFree = true;
+    else
+        currentTask = tasks->pop();
 }
 
 Task* Processor::getCurrentTask()

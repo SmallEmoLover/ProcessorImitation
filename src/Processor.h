@@ -19,9 +19,13 @@ class Processor
     public:
         //Добавление новой задачи
         void newTask(Task *task);
-        //Проверка выполнения задачи
-        void checkTask();
-		Task* getCurrentTask();
+        //Остановка текущей задачи
+        void stopTask();
+        //Печать состояния
 		void printState();
+        //Возвращает текущую задачу
+		Task* getCurrentTask();
+
         Processor();
+		~Processor();
 };
