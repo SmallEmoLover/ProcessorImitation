@@ -17,7 +17,7 @@ TaskDispencer::TaskDispencer(int num_processors)
 
 TaskDispencer::~TaskDispencer()
 {
-	delete processors;
+	delete[] processors;
 	delete tasks;
 }
 

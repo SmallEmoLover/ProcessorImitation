@@ -24,6 +24,10 @@ Task::Task(int type, string name)
 void Task::setPercent(int percent)
 {
     Task::percent = percent;
+	if (Task::percent > 100)
+		Task::percent = 100;
+	if (Task::percent < 0)
+		Task::percent = 0;
 }
 
 void Task::setName(string name)

@@ -37,8 +37,11 @@ void Processor::stopTask()
 {
 	if (currentTask != nullptr)
 		delete currentTask;
-    if (tasks->isEmpty())
+	if (tasks->isEmpty())
+	{
 		isFree = true;
+		currentTask = nullptr;
+	}
     else
         currentTask = tasks->pop();
 }

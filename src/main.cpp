@@ -7,41 +7,39 @@
 
 using namespace std;
 
-//��������� ��������������� ��� �����
+//Генерация псевдослучайных имён задач
 string randomName();
 
 int main()
 {
-
 	srand(time(0));
 
 	TaskDispencer *R = new TaskDispencer(3);
-	
-	
 	for(int loop = 0; ; loop++)
 	{
-		if (loop < 6)
+		//Какое-то время добавляем случайно сгенерированные задачи
+		if (loop < 4)
 		{
 			cout << "New tasks: ";
 			for (int i = 0; i < rand() % 4 + 1; i++)
 			{
-				Task *current = new Task(rand() % 3, randomName() + ".exe");
+				int type = rand() % 3;
+				Task *current = new Task(type, randomName() + to_string(type + 1) + ".exe");
 				cout << current->getName() << " ";
 				R->addTask(current);
-
-				//cout << "Processor 1: Current task = " << R->getCurrentTask(0)->getName();
 			}
+			R->printState();
+			Sleep(3000);
 		}
 		R->dispenceTask();
-		R->printState();
-		Sleep(3000);
+		//Повышаем задачам процент выполнения
 		for (int i = 0; i < 3; i++)
 		{
 			Task *cur = R->getCurrentTask(i);
 			if (cur != nullptr)
 			{
-				cur->setPercent(cur->getPercent() + rand() % 15 + 15);
-				if (cur->getPercent() >= 100)
+				cur->setPercent(cur->getPercent() + rand() % 15 + 25);
+				if (cur->getPercent() == 100)
 					R->stopTask(cur->getType());
 			}
 		}
@@ -49,11 +47,13 @@ int main()
 		R->printState();
 		Sleep(3000);
 		system("cls");
+		//Если задач не осталось - выходим
+		if (R->getCurrentTask(0) == nullptr && R->getCurrentTask(1) == nullptr && R->getCurrentTask(2) == nullptr)
+			break;
 	}
 	
+	delete R;
 
-
-	
 	return 0;
 }
 
