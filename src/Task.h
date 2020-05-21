@@ -2,14 +2,14 @@
 
 #include <string>
 
+using namespace std;
+
 /*
     Кулаков Д.С. :с
     ИВТ-13БО
     Лабораторная по имитированию работы процессора
     Класс задач
 */
-
-//TODO: деконструкторы
 
 class Task
 {
@@ -19,14 +19,20 @@ class Task
         //Тип задачи
 		int type;
         //Имя
-        std::string name;
+        string name;
 
     public:
+        //изменить процент выполнения
         void setPercent(int percent);
-        void setName(std::string name);
+        //изменить имя
+        void setName(string name);
+        //возвращает тип
         int getType();
+        //возвращает процент выполнения
         int getPercent();
-        std::string getName();
+        //возвращает имя
+        string getName();
+
         Task(int type);
-        Task(int type, std::string name);
+        Task(int type, string name);
 };

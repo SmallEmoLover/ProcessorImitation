@@ -14,7 +14,7 @@ Task::Task(int type)
     Task::name = "Unnamed";
 }
 
-Task::Task(int type, std::string name)
+Task::Task(int type, string name)
 {
     percent = 0;
     Task::type = type;
@@ -26,7 +26,7 @@ void Task::setPercent(int percent)
     Task::percent = percent;
 }
 
-void Task::setName(std::string name)
+void Task::setName(string name)
 {
     Task::name = name;
 }
@@ -41,7 +41,7 @@ int Task::getPercent()
     return percent;
 }
 
-std::string Task::getName()
+string Task::getName()
 {
     return name;
 }
