@@ -22,6 +22,7 @@ Queue::~Queue()
 		if (first == nullptr)
 			return;
 		first = first->getNext();
+        delete cur->getData();
 		delete cur;
 	}
 }
